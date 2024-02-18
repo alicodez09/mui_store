@@ -16,6 +16,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import { FaWindowClose } from "react-icons/fa";
 import CategoryForm from "../../components/CategoryForm";
 
 const CreateCategory = () => {
@@ -181,6 +182,31 @@ const CreateCategory = () => {
                 </TableBody>
               </Table>
             </TableContainer>
+            {/* <Modal onClose={() => setVisible(true)} open={visible}>
+              <Grid
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100vh",
+                }}
+              >
+                <Card style={{ padding: "3rem" }}>
+                  <CardContent>
+                    <IconButton onClick={() => setVisible(false)}>
+                      <FaWindowClose />
+                    </IconButton>
+
+                    <CategoryForm
+                      style={{ width: "100%" }}
+                      value={updatedName}
+                      setValue={setUpdatedName}
+                      handleSubmit={handleUpdate}
+                    />
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Modal> */}
             <Modal onClose={() => setVisible(false)} open={visible}>
               <Grid
                 style={{
@@ -190,19 +216,22 @@ const CreateCategory = () => {
                   height: "100vh",
                 }}
               >
-                <Card style={{ width: "45%", height: "45%" }}>
-                  <IconButton
-                    edge="edge"
-                    color="inherit"
-                    onClick={() => setVisible(false)}
-                    style={{ position: "absolute" }}
-                  >
-                    X
-                  </IconButton>
+                <Card style={{ padding: "1rem", position: "relative" }}>
                   <CardContent>
+                    {/* Close Icon */}
+                    <IconButton
+                      style={{
+                        position: "absolute",
+                        top: "1rem",
+                        left: "1rem",
+                      }}
+                      onClick={() => setVisible(false)}
+                    >
+                      <FaWindowClose />
+                    </IconButton>
                     <Typography
                       variant="h5"
-                      style={{ textAlign: "center", marginBottom: "2rem" }}
+                      style={{ textAlign: "center", paddingBottom: "2rem" }}
                     >
                       Edit Category
                     </Typography>

@@ -9,7 +9,7 @@ const CategoryForm = ({ handleSubmit, value, setValue }) => {
         style={{ width: "75%", margin: "auto" }}
       >
         <TextField
-          label="Enter new Category"
+          label="Enter Category"
           variant="outlined"
           value={value}
           fullWidth

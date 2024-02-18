@@ -5,7 +5,8 @@ import fs from "fs";
 //! Create Product Controller
 export const createProductController = async (req, res) => {
   try {
-    const { name, description, price, category, quantity } = req.fields;
+    const { name, description, price, category, quantity, shipping } =
+      req.fields;
     const { photo } = req.files;
     // Validation
     switch (true) {
@@ -51,7 +52,7 @@ export const createProductController = async (req, res) => {
 
 export const updateProductController = async (req, res) => {
   try {
-    const { name, slug, description, price, category, quantity, shipping } =
+    const { name, description, price, category, quantity, shipping } =
       req.fields;
     const { photo } = req.files;
     // Validation
@@ -67,10 +68,6 @@ export const updateProductController = async (req, res) => {
         return res.status(500).send({ error: "Category is required" });
       case !quantity:
         return res.status(500).send({ error: "Quantity is required" });
-      case photo && photo.size > 1000000:
-        return res.status(500).send({
-          error: "Photo is required and photo size must be less than 1mb",
-        });
     }
 
     const products = await productModel.findByIdAndUpdate(
@@ -173,6 +170,7 @@ export const getPhotoController = async (req, res) => {
 };
 
 //! Delete Product Controller
+
 export const deleteProductController = async (req, res) => {
   try {
     await productModel.findByIdAndDelete(req.params.pid).select("-photo");
@@ -187,5 +185,22 @@ export const deleteProductController = async (req, res) => {
       message: "Error while deleting the product",
       error,
     });
+  }
+};
+
+// !Product Filter Controller
+export const productFilterController = async (req, res) => {
+  try {
+    const { checked, radio } = req.body;
+    let args = {};
+    if (checked.length > 0) {
+    }
+  } catch (error) {
+    res.status(500).send({
+      success: false,
+      message: "Error while filter the product",
+      error,
+    });
+    console.log(error, "error");
   }
 };

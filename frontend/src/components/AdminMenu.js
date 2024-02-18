@@ -86,6 +86,21 @@ const AdminMenu = () => {
             style={{ paddingBottom: "3rem", color: "white" }}
           >
             <ListItemIcon>
+              <ProductionQuantityLimitsIcon
+                style={{ color: "white", marginLeft: "1.2rem" }}
+              />
+            </ListItemIcon>
+            <Typography variant="h6">
+              <NavLink to="/dashboard/admin/product" style={linkStyles}>
+                Products
+              </NavLink>
+            </Typography>
+          </ListItem>
+          <ListItem
+            disablePadding
+            style={{ paddingBottom: "3rem", color: "white" }}
+          >
+            <ListItemIcon>
               <PeopleIcon style={{ color: "white", marginLeft: "1.2rem" }} />
             </ListItemIcon>
             <Typography variant="h6">

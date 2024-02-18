@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 
 const Users = () => {
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
 
   return (
     <Container fluid>

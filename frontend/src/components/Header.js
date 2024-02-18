@@ -128,7 +128,7 @@ const Header = () => {
                 >
                   {/* <AccountCircle /> */}
                   <img
-                    src="https://lh3.googleusercontent.com/a/ACg8ocKmB8OGRUcIeELq06L4Fw2W33krqtFYPgd7ANl44KpJzQ=s96-c"
+                    src="https://avatars.githubusercontent.com/u/137699318?v=4"
                     width={30}
                     height={30}
                     style={{ borderRadius: "50%" }}
