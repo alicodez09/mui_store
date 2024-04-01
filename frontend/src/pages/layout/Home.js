@@ -4,6 +4,7 @@ import { Checkbox, Radio, Typography } from "antd";
 import { Prices } from "../../components/Prices";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
+import { CardMedia } from "@mui/material";
 const Home = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -103,19 +104,28 @@ const Home = () => {
           </div>
           <div className="col-md-9">
             <h1>All Products</h1>
-            {JSON.stringify(radio, null, 4)}
+            {/* {JSON.stringify(radio, null, 4)} */}
             <div className="d-flex flex-wrap mt-4">
               {products?.map((p) => (
                 <div className="card m-2" style={{ width: "18rem" }}>
-                  <img
-                    src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
+                  <CardMedia
+                    component="img"
                     alt={p.name}
+                    height="auto"
                     draggable="false"
-                    className="card-img-top"
+                    image={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
+                    style={{
+                      objectFit: "cover",
+                      width: "50%",
+                      height: "50%",
+                      margin: "0 auto",
+                    }}
                   />
                   <div className="card-body">
                     <h5 className="card-title">{p.name}</h5>
-                    <p className="card-text">{p.description}</p>
+                    <p className="card-text">
+                      {`${p.description.substring(0, 70)}...`}
+                    </p>
                     <p className="card-text">RS {p.price}</p>
                     <div
                       style={{

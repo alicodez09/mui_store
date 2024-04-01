@@ -5,16 +5,19 @@ const AuthContext = createContext();
 
 // Creating a Provider
 const AuthProvider = ({ children }) => {
-  // Setting a State in provider so that we can access it globally which will contain a user(null intially) and a empty token(intially)
 
   const [auth, setAuth] = useState({
     user: null,
     token: "",
   });
+
+  
   // default axios
   axios.defaults.headers.common["Authorization"] = auth?.token;
   //!auth?.token first condition will be checked then we will get the token
   // useEffect Hook for storing data in local storage
+
+  
   useEffect(() => {
     const data = localStorage.getItem("auth");
     if (data) {

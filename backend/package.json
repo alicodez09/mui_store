@@ -22,7 +22,9 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.4",
     "morgan": "^1.10.0",
+    "nikto": "^0.0.1",
     "nodemon": "^2.0.22",
-    "slugify": "^1.6.6"
+    "slugify": "^1.6.6",
+    "zaproxy": "^2.0.0-rc.4"
   }
 }

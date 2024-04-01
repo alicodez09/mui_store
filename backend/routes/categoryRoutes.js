@@ -14,26 +14,31 @@ import {
 // Create Category Route
 router.post(
   "/create-category",
-  requireSignIn,
-  isAdmin,
+  // requireSignIn,
+  // isAdmin,
   createCategoryController
 );
 
 // Update Category Route
 router.put(
   "/update-category/:id",
-  requireSignIn,
-  isAdmin,
+  // requireSignIn,
+  // isAdmin,
   updateCategoryController
 );
 
 // Get All Category Route
-router.get("/get-category",categoryController);
+router.get("/get-category", categoryController);
 
 // Single Category Route
-router.get("/single-category/:slug",singleCategoryController)
+router.get("/single-category/:slug", singleCategoryController);
 
 // Delete Category Route
-router.delete("/delete-category/:id",requireSignIn,isAdmin,deleteCategoryController)
+router.delete(
+  "/delete-category/:id",
+  requireSignIn,
+  isAdmin,
+  deleteCategoryController
+);
 
 export default router;

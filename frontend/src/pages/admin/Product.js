@@ -88,8 +88,9 @@ const Product = () => {
                       image={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
                       style={{
                         objectFit: "cover",
-                        width: "100%",
-                        height: "200px",
+                        width: "50%",
+                        height: "50%",
+                        margin: "0 auto",
                       }}
                     />
                   </Link>
@@ -99,20 +100,6 @@ const Product = () => {
                       {truncateText(p.description, 50)}
                     </Typography>
                   </CardContent>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      margin: "1rem",
-                    }}
-                  >
-                    <Link to="/">
-                      <Button variant="contained">More Details</Button>
-                    </Link>
-                    <Link to="/">
-                      <Button variant="contained">Add to Cart</Button>
-                    </Link>
-                  </div>
                 </Card>
               </Grid>
             ))}
